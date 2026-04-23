@@ -1,7 +1,7 @@
 
-  # Static App Showcase Page
+  # Zulope
 
-  This is a code bundle for Static App Showcase Page. The original project is available at https://www.figma.com/design/21OdLP1QNnK4u4s2DYLL43/Static-App-Showcase-Page.
+  This is a code bundle for Zulope. The original project is available at https://www.figma.com/design/21OdLP1QNnK4u4s2DYLL43/Zulope.
 
   ## Running the code
 

@@ -1,17 +1,99 @@
 import { motion } from "motion/react";
-import { Smartphone, Users, Calendar, BarChart, MapPin, Clock, CheckCircle, Play } from "lucide-react";
-import { useState } from "react";
+import { Smartphone, Users, Calendar, BarChart, MapPin, Clock, CheckCircle, ChevronLeft, ChevronRight, Mail, Phone, Monitor, Star } from "lucide-react";
+import { useEffect, useState } from "react";
 import { ImageWithFallback } from './components/figma/ImageWithFallback';
 import zulopeImage from "../imports/Zulope.png";
+import zulopeIcon from "../imports/icon1.png";
+import partnerScreen1 from "../imports/1-login-screen.jpg";
+import partnerScreen2 from "../imports/2-salon-onboarding-screen.jpg";
+import partnerScreen3 from "../imports/3-otp_screen.jpg";
+import partnerScreen4 from "../imports/4-store-timing.jpg";
+import partnerScreen5 from "../imports/5-location-selection.jpg";
+import partnerScreen6 from "../imports/6-first-login-home-screen.jpg";
+import partnerScreen7 from "../imports/7-adding-stylist.jpg";
+import partnerScreen8 from "../imports/8-adding-stylist-filled.jpg";
+import partnerScreen9 from "../imports/9-stylist-listing.jpg";
+import partnerScreen10 from "../imports/10-account-settings.jpg";
+import partnerScreen11 from "../imports/11-offfer-page.jpg";
+import partnerScreen12 from "../imports/12-homepage-with-all-details.jpg";
+import partnerScreen13 from "../imports/13-deleteing-account.jpg";
+import partnerScreen14 from "../imports/14-manual-booking.jpg";
+import partnerScreen15 from "../imports/15-manual-booking-1.jpg";
+import partnerScreen16 from "../imports/16-manual-bboking-3.jpg";
+import partnerScreen17 from "../imports/17-manual-booking-4.jpg";
+import partnerScreen18 from "../imports/18-manual-booking-8.jpg";
+import partnerScreen19 from "../imports/19-booking-show.jpg";
+import partnerScreen20 from "../imports/20-stlyist-booking-list.jpg";
+import partnerScreen21 from "../imports/21-analytics.jpg";
+import partnerScreen22 from "../imports/22-analytics-2.jpg";
+import userScreen1 from "../imports/1-login.jpg";
+import userScreen2 from "../imports/2-verify-otp.jpg";
+import userScreen3 from "../imports/3-onboarding.jpg";
+import userScreen4 from "../imports/4-listingpage.jpg";
+import userScreen5 from "../imports/6-booking-salon-selection.jpg";
+import userScreen6 from "../imports/7-booking-stylist-selection.jpg";
+import userScreen7 from "../imports/8-booking-timing-selection.jpg";
+import userScreen8 from "../imports/9-booking-summary.jpg";
+import userScreen9 from "../imports/10-booking-confirmation.jpg";
+import userScreen10 from "../imports/11-booking-listing.jpg";
+import userScreen11 from "../imports/12-fav-salon-listing.jpg";
+import userScreen12 from "../imports/13-accounts-2-page.jpg";
+import userScreen13 from "../imports/13-accounts-page.jpg";
+import userScreen14 from "../imports/14-notificaitons-page.jpg";
+import userScreen15 from "../imports/15-legal.jpg";
+import userScreen16 from "../imports/16-legal-2.jpg";
 
 export default function App() {
-  const [activeVideo, setActiveVideo] = useState<string | null>(null);
+  const [partnerStartIndex, setPartnerStartIndex] = useState(0);
+  const [userStartIndex, setUserStartIndex] = useState(0);
+  const screenshotsPerView = 5;
 
-  const screenshots = [
-    zulopeImage,
-    zulopeImage,
-    zulopeImage,
-    zulopeImage,
+  useEffect(() => {
+    document.title = "Zulope";
+  }, []);
+
+  const partnerScreenshots = [
+    partnerScreen1,
+    partnerScreen2,
+    partnerScreen3,
+    partnerScreen4,
+    partnerScreen5,
+    partnerScreen6,
+    partnerScreen7,
+    partnerScreen8,
+    partnerScreen9,
+    partnerScreen10,
+    partnerScreen11,
+    partnerScreen12,
+    partnerScreen13,
+    partnerScreen14,
+    partnerScreen15,
+    partnerScreen16,
+    partnerScreen17,
+    partnerScreen18,
+    partnerScreen19,
+    partnerScreen20,
+    partnerScreen21,
+    partnerScreen22,
+  ];
+
+  const userScreenshots = [
+    userScreen1,
+    userScreen2,
+    userScreen3,
+    userScreen4,
+    userScreen5,
+    userScreen6,
+    userScreen7,
+    userScreen8,
+    userScreen9,
+    userScreen10,
+    userScreen11,
+    userScreen12,
+    userScreen13,
+    userScreen14,
+    userScreen15,
+    userScreen16,
   ];
 
   const partnerFeatures = [
@@ -38,14 +120,21 @@ export default function App() {
         className="relative overflow-hidden bg-gradient-to-r from-purple-600 to-pink-600 text-white py-20 px-4"
       >
         <div className="max-w-6xl mx-auto text-center">
-          <motion.h1
+          <motion.div
             initial={{ y: -50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
             transition={{ delay: 0.2, duration: 0.8 }}
-            className="text-5xl md:text-7xl mb-6"
+            className="flex items-center justify-center gap-4 mb-6"
           >
-            Zulope
-          </motion.h1>
+            <ImageWithFallback
+              src={zulopeIcon}
+              alt="Zulope Logo"
+              className="h-20 w-auto md:h-28"
+            />
+            <h1 className="text-5xl md:text-7xl">
+              Zulope
+            </h1>
+          </motion.div>
           <motion.p
             initial={{ y: 50, opacity: 0 }}
             animate={{ y: 0, opacity: 1 }}
@@ -69,39 +158,6 @@ export default function App() {
           </motion.div>
         </div>
       </motion.section>
-
-      {/* Animated Screenshots Section */}
-      <section className="py-20 px-4 bg-white">
-        <div className="max-w-6xl mx-auto">
-          <motion.h2
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true }}
-            className="text-4xl text-center mb-12 text-gray-800"
-          >
-            See It In Action
-          </motion.h2>
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-            {screenshots.map((screenshot, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1, duration: 0.6 }}
-                whileHover={{ scale: 1.05, rotate: 2 }}
-                className="rounded-2xl shadow-xl overflow-hidden"
-              >
-                <ImageWithFallback
-                  src={screenshot}
-                  alt={`Zulope Screenshot ${index + 1}`}
-                  className="w-full h-auto"
-                />
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Zulope Partner Section */}
       <section id="partner" className="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
@@ -142,27 +198,103 @@ export default function App() {
             className="mt-12"
           >
             <h3 className="text-3xl text-center mb-8 text-purple-600">App Screenshots</h3>
-            <div className="flex gap-6 overflow-x-auto pb-4 px-4 scrollbar-hide">
-              {[1, 2, 3, 4, 5].map((index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: 50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -10 }}
-                  className="flex-shrink-0 w-64 rounded-3xl shadow-2xl overflow-hidden bg-white p-2"
-                >
-                  <div className="rounded-2xl overflow-hidden">
-                    <ImageWithFallback
-                      src={zulopeImage}
-                      alt={`Zulope Partner Screenshot ${index}`}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </motion.div>
-              ))}
+
+            <div className="relative">
+              <div className="flex gap-6 justify-center px-4">
+                {partnerScreenshots.slice(partnerStartIndex, partnerStartIndex + screenshotsPerView).map((screenshot, index) => (
+                  <motion.div
+                    key={partnerStartIndex + index}
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    whileHover={{ scale: 1.05, y: -10 }}
+                    className="flex-shrink-0 w-64 rounded-3xl shadow-2xl overflow-hidden bg-white p-2"
+                  >
+                    <div className="rounded-2xl overflow-hidden">
+                      <ImageWithFallback
+                        src={screenshot}
+                        alt={`Zulope Partner Screenshot ${partnerStartIndex + index + 1}`}
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={() => setPartnerStartIndex(Math.max(0, partnerStartIndex - screenshotsPerView))}
+                disabled={partnerStartIndex === 0}
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                <ChevronLeft className="w-6 h-6 text-purple-600" />
+              </button>
+
+              <button
+                onClick={() => setPartnerStartIndex(Math.min(partnerScreenshots.length - screenshotsPerView, partnerStartIndex + screenshotsPerView))}
+                disabled={partnerStartIndex + screenshotsPerView >= partnerScreenshots.length}
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                <ChevronRight className="w-6 h-6 text-purple-600" />
+              </button>
             </div>
+
+            {/* Counter */}
+            <p className="text-center mt-6 text-gray-600">
+              Showing {partnerStartIndex + 1}-{Math.min(partnerStartIndex + screenshotsPerView, partnerScreenshots.length)} of {partnerScreenshots.length}
+            </p>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Premium Web App Section */}
+      <section className="py-20 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-3xl p-12 text-white text-center shadow-2xl"
+          >
+            <motion.div
+              initial={{ scale: 0 }}
+              whileInView={{ scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.2, type: "spring" }}
+              className="inline-block bg-white/20 p-4 rounded-full mb-6"
+            >
+              <Monitor className="w-16 h-16" />
+            </motion.div>
+
+            <h2 className="text-4xl md:text-5xl mb-6">Premium Web Access</h2>
+            <p className="text-xl md:text-2xl mb-8 max-w-3xl mx-auto">
+              Web app for premium salons who need access to everything from the web
+            </p>
+
+            <div className="flex flex-wrap gap-6 justify-center items-center">
+              <div className="flex items-center gap-3 bg-white/10 px-6 py-3 rounded-full">
+                <Star className="w-6 h-6 text-yellow-300" />
+                <span className="text-lg">Premium Feature</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 px-6 py-3 rounded-full">
+                <Monitor className="w-6 h-6" />
+                <span className="text-lg">Full Web Dashboard</span>
+              </div>
+              <div className="flex items-center gap-3 bg-white/10 px-6 py-3 rounded-full">
+                <BarChart className="w-6 h-6" />
+                <span className="text-lg">Advanced Analytics</span>
+              </div>
+            </div>
+
+            <motion.p
+              initial={{ opacity: 0 }}
+              whileInView={{ opacity: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: 0.4 }}
+              className="mt-8 text-lg text-purple-100"
+            >
+              Manage your entire salon business from any computer with our comprehensive web platform
+            </motion.p>
           </motion.div>
         </div>
       </section>
@@ -206,27 +338,51 @@ export default function App() {
             className="mt-12"
           >
             <h3 className="text-3xl text-center mb-8 text-pink-600">App Screenshots</h3>
-            <div className="flex gap-6 overflow-x-auto pb-4 px-4 scrollbar-hide">
-              {[1, 2, 3, 4, 5].map((index) => (
-                <motion.div
-                  key={index}
-                  initial={{ opacity: 0, x: -50 }}
-                  whileInView={{ opacity: 1, x: 0 }}
-                  viewport={{ once: true }}
-                  transition={{ delay: index * 0.1 }}
-                  whileHover={{ scale: 1.05, y: -10 }}
-                  className="flex-shrink-0 w-64 rounded-3xl shadow-2xl overflow-hidden bg-white p-2"
-                >
-                  <div className="rounded-2xl overflow-hidden">
-                    <ImageWithFallback
-                      src={zulopeImage}
-                      alt={`Zulope Screenshot ${index}`}
-                      className="w-full h-auto"
-                    />
-                  </div>
-                </motion.div>
-              ))}
+
+            <div className="relative">
+              <div className="flex gap-6 justify-center px-4">
+                {userScreenshots.slice(userStartIndex, userStartIndex + screenshotsPerView).map((screenshot, index) => (
+                  <motion.div
+                    key={userStartIndex + index}
+                    initial={{ opacity: 0, x: -50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                    whileHover={{ scale: 1.05, y: -10 }}
+                    className="flex-shrink-0 w-64 rounded-3xl shadow-2xl overflow-hidden bg-white p-2"
+                  >
+                    <div className="rounded-2xl overflow-hidden">
+                      <ImageWithFallback
+                        src={screenshot}
+                        alt={`Zulope Screenshot ${userStartIndex + index + 1}`}
+                        className="w-full h-auto"
+                      />
+                    </div>
+                  </motion.div>
+                ))}
+              </div>
+
+              {/* Navigation Buttons */}
+              <button
+                onClick={() => setUserStartIndex(Math.max(0, userStartIndex - screenshotsPerView))}
+                disabled={userStartIndex === 0}
+                className="absolute left-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                <ChevronLeft className="w-6 h-6 text-pink-600" />
+              </button>
+
+              <button
+                onClick={() => setUserStartIndex(Math.min(userScreenshots.length - screenshotsPerView, userStartIndex + screenshotsPerView))}
+                disabled={userStartIndex + screenshotsPerView >= userScreenshots.length}
+                className="absolute right-0 top-1/2 -translate-y-1/2 bg-white/90 hover:bg-white p-3 rounded-full shadow-lg disabled:opacity-30 disabled:cursor-not-allowed"
+              >
+                <ChevronRight className="w-6 h-6 text-pink-600" />
+              </button>
             </div>
+
+            {/* Counter */}
+            <p className="text-center mt-6 text-gray-600">
+              Showing {userStartIndex + 1}-{Math.min(userStartIndex + screenshotsPerView, userScreenshots.length)} of {userScreenshots.length}
+            </p>
           </motion.div>
         </div>
       </section>
@@ -252,15 +408,12 @@ export default function App() {
             <div className="relative pb-[56.25%] rounded-2xl overflow-hidden shadow-2xl">
               <iframe
                 className="absolute top-0 left-0 w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src="https://www.youtube.com/embed/VrJto2wAdNw"
                 title="Zulope Demo"
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
               />
             </div>
-            <p className="text-center mt-4 text-gray-600">
-              Replace the YouTube video ID in the embed URL above with your actual demo video
-            </p>
           </motion.div>
         </div>
       </section>
@@ -280,12 +433,12 @@ export default function App() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="flex gap-6 justify-center"
+            className="flex gap-6 justify-center flex-wrap"
           >
             <motion.a
               whileHover={{ scale: 1.1 }}
               whileTap={{ scale: 0.95 }}
-              href="https://instagram.com/zulope"
+              href="https://www.instagram.com/zulope_coms/"
               target="_blank"
               rel="noopener noreferrer"
               className="bg-gradient-to-r from-purple-600 to-pink-600 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition"
@@ -298,7 +451,128 @@ export default function App() {
                 Follow on Instagram
               </span>
             </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.95 }}
+              href="https://www.youtube.com/@zulope"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="bg-red-600 text-white px-8 py-4 rounded-full shadow-lg hover:shadow-xl transition"
+            >
+              <span className="flex items-center gap-2">
+                <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                  <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                Follow on YouTube
+              </span>
+            </motion.a>
           </motion.div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section className="py-20 px-4 bg-gradient-to-br from-purple-50 to-pink-50">
+        <div className="max-w-6xl mx-auto">
+          <motion.h2
+            initial={{ opacity: 0 }}
+            whileInView={{ opacity: 1 }}
+            viewport={{ once: true }}
+            className="text-4xl text-center mb-12 text-gray-800"
+          >
+            Contact Us
+          </motion.h2>
+
+          <div className="grid md:grid-cols-2 gap-8 mb-12">
+            {/* Contact Info */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-2xl shadow-lg"
+            >
+              <h3 className="text-2xl mb-6 text-purple-600">Get in Touch</h3>
+
+              <div className="space-y-4">
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  href="mailto:gunasekaran@thegksoft.com"
+                  className="flex items-center gap-4 p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition"
+                >
+                  <Mail className="w-6 h-6 text-purple-600" />
+                  <div>
+                    <p className="text-sm text-gray-600">Email</p>
+                    <p className="text-gray-800">gunasekaran@thegksoft.com</p>
+                  </div>
+                </motion.a>
+
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  href="tel:+919159132746"
+                  className="flex items-center gap-4 p-4 bg-pink-50 rounded-lg hover:bg-pink-100 transition"
+                >
+                  <Phone className="w-6 h-6 text-pink-600" />
+                  <div>
+                    <p className="text-sm text-gray-600">Phone</p>
+                    <p className="text-gray-800">+91 9159132746</p>
+                  </div>
+                </motion.a>
+              </div>
+            </motion.div>
+
+            {/* Download Links */}
+            <motion.div
+              initial={{ opacity: 0, x: 50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              className="bg-white p-8 rounded-2xl shadow-lg"
+            >
+              <h3 className="text-2xl mb-6 text-pink-600">Download Apps</h3>
+
+              <div className="space-y-4">
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  href="https://play.google.com/store/apps/details?id=com.thegksoft.zulope.customer&pcampaignid=web_share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-gradient-to-r from-pink-50 to-purple-50 rounded-lg hover:shadow-md transition"
+                >
+                  <div className="bg-white p-3 rounded-lg">
+                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5Z" fill="#00D663"/>
+                      <path d="M16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12Z" fill="#FFCE00"/>
+                      <path d="M20.16 10.81C20.5 11.08 20.75 11.53 20.75 12C20.75 12.47 20.53 12.92 20.16 13.19L17.89 14.5L15.43 12L17.89 9.5L20.16 10.81Z" fill="#FF3E00"/>
+                      <path d="M6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z" fill="#00A6FF"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Customer App</p>
+                    <p className="text-gray-800">Get it on Google Play</p>
+                  </div>
+                </motion.a>
+
+                <motion.a
+                  whileHover={{ scale: 1.02 }}
+                  href="https://play.google.com/store/apps/details?id=com.thegksoft.zulope.store&pcampaignid=web_share"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-4 p-4 bg-gradient-to-r from-purple-50 to-pink-50 rounded-lg hover:shadow-md transition"
+                >
+                  <div className="bg-white p-3 rounded-lg">
+                    <svg className="w-8 h-8" viewBox="0 0 24 24" fill="none">
+                      <path d="M3 20.5V3.5C3 2.91 3.34 2.39 3.84 2.15L13.69 12L3.84 21.85C3.34 21.6 3 21.09 3 20.5Z" fill="#00D663"/>
+                      <path d="M16.81 15.12L6.05 21.34L14.54 12.85L16.81 15.12Z" fill="#FFCE00"/>
+                      <path d="M20.16 10.81C20.5 11.08 20.75 11.53 20.75 12C20.75 12.47 20.53 12.92 20.16 13.19L17.89 14.5L15.43 12L17.89 9.5L20.16 10.81Z" fill="#FF3E00"/>
+                      <path d="M6.05 2.66L16.81 8.88L14.54 11.15L6.05 2.66Z" fill="#00A6FF"/>
+                    </svg>
+                  </div>
+                  <div>
+                    <p className="text-sm text-gray-600">Partner App</p>
+                    <p className="text-gray-800">Get it on Google Play</p>
+                  </div>
+                </motion.a>
+              </div>
+            </motion.div>
+          </div>
         </div>
       </section>
 
@@ -319,6 +593,15 @@ export default function App() {
               className="text-3xl bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent inline-block"
             >
               GK Soft
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.05 }}
+              href="https://thegksoft.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="block mt-2 text-purple-300 hover:text-purple-200 transition"
+            >
+              thegksoft.com
             </motion.a>
             <p className="mt-6 text-gray-400">
               © 2026 Zulope. All rights reserved.
