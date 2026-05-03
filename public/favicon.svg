@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  <defs>
+    <radialGradient id="leftWingGrad" cx="35%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#c084fc"/>
+      <stop offset="100%" stop-color="#7c3aed"/>
+    </radialGradient>
+    <radialGradient id="rightWingGrad" cx="65%" cy="45%" r="60%">
+      <stop offset="0%" stop-color="#f9a8d4"/>
+      <stop offset="100%" stop-color="#ec4899"/>
+    </radialGradient>
+  </defs>
+
+  <!-- Left upper wing -->
+  <path d="M50 38 C44 22, 18 14, 14 28 C10 42, 28 52, 50 55 C42 46, 30 40, 50 38Z" fill="url(#leftWingGrad)" opacity="0.9"/>
+  <!-- Left upper wing inner layer -->
+  <path d="M50 40 C45 28, 25 22, 22 33 C19 44, 34 50, 50 52 C42 46, 33 42, 50 40Z" fill="#a855f7" opacity="0.5"/>
+
+  <!-- Left lower wing -->
+  <path d="M50 55 C34 55, 16 62, 18 74 C20 84, 38 80, 50 68 C46 65, 38 62, 50 55Z" fill="url(#leftWingGrad)" opacity="0.9"/>
+  <!-- Left lower wing inner layer -->
+  <path d="M50 58 C37 58, 22 65, 24 73 C26 80, 40 77, 50 67 C46 64, 39 62, 50 58Z" fill="#a855f7" opacity="0.5"/>
+
+  <!-- Right upper wing -->
+  <path d="M50 38 C56 22, 82 14, 86 28 C90 42, 72 52, 50 55 C58 46, 70 40, 50 38Z" fill="url(#rightWingGrad)" opacity="0.9"/>
+  <!-- Right upper wing inner layer -->
+  <path d="M50 40 C55 28, 75 22, 78 33 C81 44, 66 50, 50 52 C58 46, 67 42, 50 40Z" fill="#f472b6" opacity="0.5"/>
+
+  <!-- Right lower wing -->
+  <path d="M50 55 C66 55, 84 62, 82 74 C80 84, 62 80, 50 68 C54 65, 62 62, 50 55Z" fill="url(#rightWingGrad)" opacity="0.9"/>
+  <!-- Right lower wing inner layer -->
+  <path d="M50 58 C63 58, 78 65, 76 73 C74 80, 60 77, 50 67 C54 64, 61 62, 50 58Z" fill="#f472b6" opacity="0.5"/>
+
+  <!-- Body -->
+  <ellipse cx="50" cy="55" rx="3" ry="20" fill="#7c3aed"/>
+  <!-- Head -->
+  <circle cx="50" cy="34" r="3.5" fill="#7c3aed"/>
+  <!-- Antennae -->
+  <path d="M50 31 C47 25, 43 20, 41 16" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <circle cx="41" cy="16" r="2" fill="#a855f7"/>
+  <path d="M50 31 C53 25, 57 20, 59 16" stroke="#7c3aed" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+  <circle cx="59" cy="16" r="2" fill="#ec4899"/>
+</svg>
