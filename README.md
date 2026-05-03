@@ -28,3 +28,5 @@ After deployment:
 2. Submit `https://your-domain/sitemap.xml`.
 3. Use URL Inspection for the homepage and request indexing.
 4. Keep at least one backlink and share your site URL publicly so Google discovers it faster.
+
+added github push
