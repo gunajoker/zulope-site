@@ -1,0 +1,224 @@
+:root {
+  --surface: #ffffff;
+  --text: #101827;
+  --muted: #51607a;
+  --line: #d8e1ee;
+  --accent: #2f6aff;
+  --accent-strong: #1f4ee3;
+  --bg-a: #eaf1ff;
+  --bg-b: #fff8ea;
+  --card-a: rgba(255, 255, 255, 0.92);
+  --card-b: rgba(248, 250, 255, 0.92);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  color: var(--text);
+  background:
+    radial-gradient(1100px 520px at -10% 0%, var(--bg-a), transparent 60%),
+    radial-gradient(900px 460px at 120% 10%, var(--bg-b), transparent 62%),
+    linear-gradient(180deg, #f7f9fe 0%, #ffffff 100%);
+  font-family: "Manrope", "Segoe UI", sans-serif;
+}
+
+a {
+  color: inherit;
+}
+
+.page {
+  max-width: 1040px;
+  margin: 0 auto;
+  padding: 20px 20px 44px;
+}
+
+.topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  text-decoration: none;
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-weight: 700;
+  letter-spacing: 0.2px;
+}
+
+.brand-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), #ff755f);
+  box-shadow: 0 0 0 8px rgba(47, 106, 255, 0.12);
+}
+
+.chip {
+  border: 1px solid color-mix(in srgb, var(--accent) 25%, #ffffff);
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 8%, #ffffff);
+  border-radius: 999px;
+  padding: 7px 12px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.3px;
+  text-transform: uppercase;
+}
+
+.hero {
+  padding: 30px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: linear-gradient(150deg, var(--card-a) 0%, var(--card-b) 100%);
+  backdrop-filter: blur(4px);
+}
+
+h1 {
+  margin: 12px 0 14px;
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-size: clamp(2rem, 4.6vw, 3.2rem);
+  line-height: 1.08;
+  letter-spacing: -1px;
+}
+
+.sub {
+  margin: 0;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.68;
+  max-width: 780px;
+}
+
+.grid {
+  margin-top: 24px;
+  display: grid;
+  gap: 16px;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.panel {
+  border: 1px solid var(--line);
+  background: #ffffff;
+  border-radius: 18px;
+  padding: 16px;
+}
+
+.panel h2 {
+  margin: 0 0 9px;
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-size: 1.02rem;
+}
+
+.panel p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.features {
+  margin-top: 18px;
+  padding: 20px;
+  border-radius: 18px;
+  border: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.features h2 {
+  margin: 0 0 12px;
+  font-family: "Sora", "Segoe UI", sans-serif;
+  font-size: 1.1rem;
+}
+
+.features ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 10px;
+}
+
+.features li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  color: #2b3953;
+}
+
+.features li::before {
+  content: "";
+  width: 11px;
+  height: 11px;
+  margin-top: 6px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), #2db6ff);
+  flex: 0 0 11px;
+}
+
+.cta-row {
+  margin-top: 24px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  border-radius: 999px;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0 18px;
+  border: 1px solid transparent;
+}
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+  color: #ffffff;
+  box-shadow: 0 10px 25px rgba(16, 37, 84, 0.2);
+}
+
+.btn-secondary {
+  border-color: color-mix(in srgb, var(--accent) 40%, #ffffff);
+  color: var(--accent-strong);
+  background: color-mix(in srgb, var(--accent) 6%, #ffffff);
+}
+
+.footer-note {
+  margin-top: 18px;
+  color: #6a7892;
+  font-size: 0.92rem;
+}
+
+@media (max-width: 900px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 640px) {
+  .page {
+    padding: 16px 14px 30px;
+  }
+
+  .hero {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  h1 {
+    line-height: 1.14;
+    letter-spacing: -0.6px;
+  }
+}
