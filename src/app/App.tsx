@@ -804,32 +804,6 @@ export default function App() {
               className="bg-white p-8 rounded-2xl shadow-lg"
             >
               <h3 className="text-2xl mb-6 text-purple-600">Get in Touch</h3>
-
-              <div className="space-y-4">
-                <motion.a
-                  whileHover={{ scale: 1.02 }}
-                  href="mailto:gunasekaran@thegksoft.com"
-                  className="flex items-center gap-4 p-4 bg-purple-50 rounded-lg hover:bg-purple-100 transition"
-                >
-                  <Mail className="w-6 h-6 text-purple-600" />
-                  <div>
-                    <p className="text-sm text-gray-600">Email</p>
-                    <p className="text-gray-800">gunasekaran@thegksoft.com</p>
-                  </div>
-                </motion.a>
-
-                <motion.a
-                  whileHover={{ scale: 1.02 }}
-                  href="tel:+919159132746"
-                  className="flex items-center gap-4 p-4 bg-pink-50 rounded-lg hover:bg-pink-100 transition"
-                >
-                  <Phone className="w-6 h-6 text-pink-600" />
-                  <div>
-                    <p className="text-sm text-gray-600">Phone</p>
-                    <p className="text-gray-800">+91 9159132746</p>
-                  </div>
-                </motion.a>
-              </div>
             </motion.div>
 
             {/* Download Links */}
