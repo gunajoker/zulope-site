@@ -914,6 +914,32 @@ export default function App() {
             >
               thegksoft.com
             </motion.a>
+            <nav
+              aria-label="Legal"
+              className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-gray-400"
+            >
+              <a href="/privacy-policy/" className="hover:text-white transition">
+                Privacy Policy
+              </a>
+              <span aria-hidden="true" className="text-gray-600">·</span>
+              <a href="/delete-account/" className="hover:text-white transition">
+                Delete Account
+              </a>
+              <span aria-hidden="true" className="text-gray-600">·</span>
+              <a
+                href="/partner/privacy-policy/"
+                className="hover:text-white transition"
+              >
+                Partner Privacy Policy
+              </a>
+              <span aria-hidden="true" className="text-gray-600">·</span>
+              <a
+                href="/partner/delete-account/"
+                className="hover:text-white transition"
+              >
+                Partner Delete Account
+              </a>
+            </nav>
             <p className="mt-6 text-gray-400">
               © 2026 Zulope. All rights reserved.
             </p>
