@@ -1,0 +1,26 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": [
+          "AVK7FLT2QZ.com.thegksoft.zulope.customer"
+        ],
+        "components": [
+          {
+            "/": "/customer/*"
+          }
+        ]
+      },
+      {
+        "appIDs": [
+          "AVK7FLT2QZ.com.thegksoft.zulope.store"
+        ],
+        "components": [
+          {
+            "/": "/partner/*"
+          }
+        ]
+      }
+    ]
+  }
+}
