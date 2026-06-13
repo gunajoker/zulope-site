@@ -915,8 +915,20 @@ export default function App() {
               thegksoft.com
             </motion.a>
             <nav
-              aria-label="Legal"
+              aria-label="Apps"
               className="mt-8 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-gray-400"
+            >
+              <a href="/customer/" className="hover:text-white transition">
+                Customer App
+              </a>
+              <span aria-hidden="true" className="text-gray-600">·</span>
+              <a href="/partner/" className="hover:text-white transition">
+                Partner App
+              </a>
+            </nav>
+            <nav
+              aria-label="Legal"
+              className="mt-4 flex flex-wrap items-center justify-center gap-x-4 gap-y-2 text-sm text-gray-400"
             >
               <a href="/privacy-policy/" className="hover:text-white transition">
                 Privacy Policy
