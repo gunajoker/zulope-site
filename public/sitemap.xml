@@ -31,6 +31,16 @@
     <priority>0.8</priority>
   </url>
   <url>
+    <loc>https://zulope.com/customer/privacy-policy/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://zulope.com/customer/delete-account/</loc>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://zulope.com/privacy-policy/</loc>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
