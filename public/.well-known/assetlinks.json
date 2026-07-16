@@ -1,16 +1,21 @@
 [
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.thegksoft.zulope.customer",
       "sha256_cert_fingerprints": [
-        "E6:80:1B:E1:5C:1E:3B:AB:1A:E4:B3:ED:58:F2:E8:FA:41:A1:6F:45:E6:C3:A3:4B:F6:3F:FD:02:0B:1B:2B:3C"
+        "E6:80:1B:E1:5C:1E:3B:AB:1A:E4:B3:ED:58:F2:E8:FA:41:A1:6F:45:E6:C3:A3:4B:F6:3F:FD:02:0B:1B:2B:3C",
+        "E9:C5:3D:25:E4:80:5D:E0:1A:19:10:E2:90:70:93:7D:D7:22:A4:88:4E:33:E9:60:B6:3B:32:A5:D0:0B:BE:98"
       ]
     }
   },
   {
-    "relation": ["delegate_permission/common.handle_all_urls"],
+    "relation": [
+      "delegate_permission/common.handle_all_urls"
+    ],
     "target": {
       "namespace": "android_app",
       "package_name": "com.thegksoft.zulope.store",
